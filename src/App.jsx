@@ -27,15 +27,15 @@ function App() {
     if (cardsClicked.includes(pokemonName)) {
       setScore((prevScore) => 0);
       setCardsClicked([]);
-      if (setScore((prevScore) => score > prevScore)) {
-            setHighScore(score);
-      }
+      score > highScore ? setHighScore(score) : setHighScore(highScore);
     }
     else{
       setScore((prevScore) => prevScore + 1);
-      setCardsClicked([...shuffledPokemonNames, pokemonName]);
+      setCardsClicked((prevCardsClicked) => [...cardsClicked, pokemonName]);
     }
   }
+  
+
   return(
     <div>
       <div className="title-score-board">
