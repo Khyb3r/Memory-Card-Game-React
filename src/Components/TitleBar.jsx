@@ -3,8 +3,8 @@
 
 function TitleBar(props) {
     return(
-        <div>
-            <h1>{props.heading}</h1>
+        <div className="title-bar">
+            <h1>{props.title}</h1>
         </div>
     );
 }
