@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 
 
 
@@ -31,7 +31,7 @@ function GameCard(props) {
     
 
     return(
-    <div className="card-container">
+    <div className="card-container" onClick={props.handleClick}>
         <img src={pokemonImage} className="pokemon-image"/>
         <p className="pokemon-name">{pokemonName}</p>
     </div>
