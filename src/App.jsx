@@ -4,7 +4,6 @@ import ScoreBoard from "./Components/ScoreBoard";
 import GameCard from "./Components/GameCard";
 
 
-
 function App() {
   const [pokemonNames, setPokemonNames] = useState(['arceus', 'mewtwo', 'reshiram',
                                          'raikou', 'moltres', 'charizard', 'xerneas',
@@ -21,7 +20,6 @@ function App() {
     setShuffledPokemonNames(shuffledArray);
     
   }
-
   function handleCardClick(pokemonName) {
     shufflePokemonNames();
     if (cardsClicked.includes(pokemonName)) {
@@ -34,8 +32,6 @@ function App() {
       setCardsClicked((prevCardsClicked) => [...cardsClicked, pokemonName]);
     }
   }
-  
-
   return(
     <div>
       <div className="title-score-board">
@@ -49,11 +45,6 @@ function App() {
         ))}
       </div>
     </div>
-  );
-
-
-
-  
+  ); 
 }
-
 export default App;

@@ -1,6 +1,4 @@
-import { useEffect, useState, useSyncExternalStore } from "react";
-
-
+import React, { useEffect, useState } from "react";
 
 function GameCard(props) {
     const pokemonName = props.cardName;
@@ -24,24 +22,14 @@ function GameCard(props) {
             console.log(error);
         }
     }
-    function getClickedPokemon() {
-        console.log(shuffleToClick.fetch.cardName);
-        
-
-
-    }
     useEffect(() => {
         getPokeApiRequest(pokemonName);
     }, [pokemonName]);
-    
-    
-
     return(
     <div className="card-container" onClick={props.handleClick}>
         <img src={pokemonImage} className="pokemon-image"/>
         <p className="pokemon-name">{pokemonName}</p>
     </div>
     );
-
 }
 export default GameCard;
