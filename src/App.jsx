@@ -6,35 +6,14 @@ import GameCard from "./Components/GameCard";
 
 
 function App() {
-  const [cards, setCards] = useState([])
+  const [cards, setCards] = useState({
+      "name": "mew",
+  }, {
+
+  })
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
-
-
-  useEffect(() => {
-    getPokeApiRequest;
-  }, [])
-
-
-
-  const getPokeApiRequest = async () => {
-    try {
-    const url = `https://pokeapi.co/api/v2/pokemon/ditto`;
-    const response = await fetch(url);
-
-    if (!response.ok) {
-     throw new Error("The connection failed: Error " + response.statusText);
-    }
-
-    const pokeData = await response.json();
-    
       
-    } catch (error) {
-      console.log(error);
-      
-    }
-      
-    }
 
 
   return(
@@ -45,7 +24,18 @@ function App() {
       </div>
           <p>Get points by clicking on a card, but don't click on any more than once</p>
       <div className="game-container">
-        <GameCard cardName="ditto"/>
+        <GameCard/>
+        <GameCard/>
+        <GameCard/>
+        <GameCard/>
+        <GameCard/>
+        <GameCard/>
+        <GameCard/>
+        <GameCard/>
+        <GameCard/>
+        <GameCard/>
+        <GameCard/>
+        <GameCard/>
       </div>
       
     </div>

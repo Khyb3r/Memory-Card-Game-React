@@ -7,7 +7,8 @@ function GameCard(props) {
     return(
     <>
     <div className="card-container">
-        <img src={props.cardName}/>
+        <img src="./src/playing-card.webp" style={{maxWidth: "30px", maxHeight: "30px"}}/> 
+        <p>Playing Card</p>
     </div>
     </>);
 
