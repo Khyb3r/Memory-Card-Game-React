@@ -1,16 +1,41 @@
+import { useEffect, useState } from "react";
 
 
 
 function GameCard(props) {
-    const cardName = props.cardName;
+    const pokemonName = props.cardName;
+    const [pokemonImage, setPokemonImage] = useState(null);
+
+
+    const getPokeApiRequest = async (pokemonName) => {
+        try {
+            const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+            const response = await fetch(url);
+
+            if(!response.ok) {
+            throw new Error("The requet failed: Error " + response.status);
+        }
+        const pokemonData = await response.json();
+        if(pokemonData.sprites.front_default) {
+            setPokemonImage(pokemonData.sprites.front_default)
+        }
+            
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    useEffect(() => {
+        getPokeApiRequest(pokemonName);
+    }, [pokemonName]);
+    
+    
 
     return(
-    <>
     <div className="card-container">
-        <img src="./src/playing-card.webp" style={{maxWidth: "30px", maxHeight: "30px"}}/> 
-        <p>Playing Card</p>
+        <img src={pokemonImage} className="pokemon-image"/>
+        <p className="pokemon-name">{pokemonName}</p>
     </div>
-    </>);
+    );
 
 }
 export default GameCard;

@@ -24,18 +24,18 @@ function App() {
       </div>
           <p>Get points by clicking on a card, but don't click on any more than once</p>
       <div className="game-container">
-        <GameCard/>
-        <GameCard/>
-        <GameCard/>
-        <GameCard/>
-        <GameCard/>
-        <GameCard/>
-        <GameCard/>
-        <GameCard/>
-        <GameCard/>
-        <GameCard/>
-        <GameCard/>
-        <GameCard/>
+        <GameCard cardName="ditto"/>
+        <GameCard cardName="mew"/>
+        <GameCard cardName="ditto"/>
+        <GameCard cardName="mew"/>
+        <GameCard cardName="ditto"/>
+        <GameCard cardName="mew"/>
+        <GameCard cardName="ditto"/>
+        <GameCard cardName="mew"/>
+        <GameCard cardName="ditto"/>
+        <GameCard cardName="mew"/>
+        <GameCard cardName="ditto"/>
+        <GameCard cardName="mew"/>
       </div>
       
     </div>
