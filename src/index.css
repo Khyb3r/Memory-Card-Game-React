@@ -1,31 +1,62 @@
+body{
+    background: linear-gradient(135deg, rgb(145, 145, 145), black, darkblue);
+    background-size: 300% 300%;
+    animation: moveGradient 12s ease-in-out infinite;
+  }
+  @keyframes moveGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 
 .title-score-board {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding-bottom: 20px;
-    
-    border: 2px solid black;
+    font-family: 'Roboto';
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);   
 }
 
 .game-container{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    border: 2px solid black;
     padding-top: 20px;
     height: 120%;
     width: 100%;
 }
 .card-container{
     border: 2px solid black;
-    background-color: aquamarine;
+    background: linear-gradient(90deg, #99ccff, #cc99ff, #99ffcc);
+    background-size: 300% 300%;
+    animation: backgroundMove 12s ease infinite;
     flex-basis: calc(20% - 2px);
     height: 300px;
     width: 300px;
     margin-bottom: 20px;
     border-radius: 10px;
 }
+@keyframes backgroundMove{
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 .pokemon-image{
     width: 65%;
     height: 65%;
@@ -40,4 +71,11 @@
     color: white;
     padding-bottom: 20%;
     text-align: center;
+}
+.instruction-text{
+    font-family: 'Roboto';
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); 
 }

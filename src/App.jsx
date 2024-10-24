@@ -39,10 +39,10 @@ function App() {
   return(
     <div>
       <div className="title-score-board">
-        <TitleBar title="... Memory Game"/>
+        <TitleBar title="Pokemon Memory Game"/>
         <ScoreBoard currentScore={score} highestScore={highScore}/>
       </div>
-          <p>Get points by clicking on a card, but don't click on any more than once</p>
+          <p className="instruction-text">Get points by clicking on a card, but don't click on any more than once</p>
       <div className="game-container">
         {shuffledPokemonNames.map((pokemonName, index) => (
           <GameCard cardName={pokemonName} key={pokemonName} handleClick={() => handleCardClick(pokemonName)}/>
