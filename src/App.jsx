@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import TitleBar from "./Components/TitleBar";
 import ScoreBoard from "./Components/ScoreBoard";
 import GameCard from "./Components/GameCard";
@@ -11,6 +11,7 @@ function App() {
                                          'palkia', 'dialga', 'entei', 'zamazenta', 'kyurem']);
 
   const [shuffledPokemonNames, setShuffledPokemonNames] = useState(pokemonNames);
+  const [cardsClicked, setCardsClicked] = useState([]);
 
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
@@ -21,8 +22,19 @@ function App() {
     
   }
 
-  function handleCardClick() {
+  function handleCardClick(pokemonName) {
     shufflePokemonNames();
+    if (cardsClicked.includes(pokemonName)) {
+      setScore((prevScore) => 0);
+      setCardsClicked([]);
+      if (setScore((prevScore) => score > prevScore)) {
+            setHighScore(score);
+      }
+    }
+    else{
+      setScore((prevScore) => prevScore + 1);
+      setCardsClicked([...shuffledPokemonNames, pokemonName]);
+    }
   }
   return(
     <div>
@@ -33,7 +45,7 @@ function App() {
           <p>Get points by clicking on a card, but don't click on any more than once</p>
       <div className="game-container">
         {shuffledPokemonNames.map((pokemonName, index) => (
-          <GameCard cardName={pokemonName} key={index} handleClick={handleCardClick}/>
+          <GameCard cardName={pokemonName} key={pokemonName} handleClick={() => handleCardClick(pokemonName)}/>
         ))}
       </div>
     </div>

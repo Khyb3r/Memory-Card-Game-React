@@ -24,6 +24,12 @@ function GameCard(props) {
             console.log(error);
         }
     }
+    function getClickedPokemon() {
+        console.log(shuffleToClick.fetch.cardName);
+        
+
+
+    }
     useEffect(() => {
         getPokeApiRequest(pokemonName);
     }, [pokemonName]);
